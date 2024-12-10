@@ -11,6 +11,10 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+import com.google.firebase.Firebase;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
 public class AddCustomerActivity extends AppCompatActivity {
 
     EditText nameET;
@@ -26,6 +30,9 @@ public class AddCustomerActivity extends AppCompatActivity {
     String address;
     String email;
     Customer myCustomer;
+    FirebaseDatabase database;
+    DatabaseReference myRef;
+//    Firebase database;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,7 +45,11 @@ public class AddCustomerActivity extends AppCompatActivity {
         addressET = (EditText)findViewById(R.id.addressET);
         emailET = (EditText)findViewById(R.id.emailET);
         submitBTNN = (Button)findViewById(R.id.submitBTN);
+        // Write a message to the database
+        database = FirebaseDatabase.getInstance();
+        myRef = database.getReference("message");
 
+//        myRef.setValue(myCustomer);
 
         submitBTNN.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -49,6 +60,7 @@ public class AddCustomerActivity extends AppCompatActivity {
                 address = addressET.getText().toString();
                 email = emailET.getText().toString();
                 myCustomer = new Customer(name, lastname, phone, address, email);
+                myRef.setValue(myCustomer);
             }
         });
     }

@@ -92,7 +92,7 @@
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="<-"
+            android:text="Back"
             android:id="@+id/backBTN"
             android:textStyle="bold"
             android:textSize="25sp"/>
@@ -100,7 +100,7 @@
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="->"
+            android:text="Forward"
             android:id="@+id/nextBTN"
             android:textStyle="bold"
             android:textSize="25sp"/>

@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "28127914047",
+    "project_id": "customerapplch",
+    "storage_bucket": "customerapplch.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:28127914047:android:a76d70f9707f738d3ff08a",
+        "android_client_info": {
+          "package_name": "com.example.customerapplch"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyABu5yifL5_4MK9RzsxLoL6ZcoFO2ourvc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
