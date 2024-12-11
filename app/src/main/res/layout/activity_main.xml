@@ -18,6 +18,7 @@
             android:layout_height="wrap_content"
             android:textStyle="bold"
             android:textSize="25sp"
+            android:id="@+id/firstNameTV"
             android:text="Liliana"/>
 
     </LinearLayout>
@@ -33,6 +34,7 @@
             android:layout_height="wrap_content"
             android:textSize="25sp"
             android:textStyle="bold"
+            android:id="@+id/lastNameTV"
             android:text="ChicasSalgado"/>
 
     </LinearLayout>
@@ -49,6 +51,7 @@
             android:layout_height="match_parent"
             android:text="14108058117"
             android:textSize="25sp"
+            android:id="@+id/phoneTV"
             android:textStyle="bold"/>
 
     </LinearLayout>
@@ -64,6 +67,7 @@
             android:layout_height="match_parent"
             android:text="1105AngleseaSt"
             android:textSize="25sp"
+            android:id="@+id/addressTV"
             android:textStyle="bold"/>
 
     </LinearLayout>
@@ -79,6 +83,7 @@
             android:layout_height="match_parent"
             android:text="Email"
             android:textSize="25sp"
+            android:id="@+id/emailTV"
             android:textStyle="bold"/>
 
     </LinearLayout>
@@ -98,12 +103,12 @@
             android:textSize="25sp"/>
 
         <Button
+            android:id="@+id/nextBTN"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Forward"
-            android:id="@+id/nextBTN"
-            android:textStyle="bold"
-            android:textSize="25sp"/>
+            android:textSize="25sp"
+            android:textStyle="bold" />
 
     </LinearLayout>
 
@@ -112,7 +117,6 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:gravity="center">
-
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/add_fab"

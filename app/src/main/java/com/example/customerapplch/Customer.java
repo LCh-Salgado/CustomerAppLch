@@ -15,6 +15,13 @@ public class Customer {
         this.address = address;
         this.email = email;
     }
+    public Customer(){
+        this.firstName = "";
+        this.lastName = "";
+        this.phone = "";
+        this.address = "";
+        this.email = "";
+    }
 
     public String getFirstName() {
         return firstName;

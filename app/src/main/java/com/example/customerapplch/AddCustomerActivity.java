@@ -60,7 +60,9 @@ public class AddCustomerActivity extends AppCompatActivity {
                 address = addressET.getText().toString();
                 email = emailET.getText().toString();
                 myCustomer = new Customer(name, lastname, phone, address, email);
-                myRef.setValue(myCustomer);
+//                myRef.setValue(myCustomer);
+                String key = myRef.push().getKey();
+                myRef.child(key).setValue(myCustomer);
             }
         });
     }
