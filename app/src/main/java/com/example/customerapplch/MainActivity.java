@@ -7,7 +7,6 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
@@ -27,6 +26,7 @@ public class MainActivity extends AppCompatActivity {
 
     FloatingActionButton addFABTN;
     ArrayList<Customer> customers;
+    int customerIndex;
     Intent fABIntent;
     Button backBTNNN;
     Button nextBTNNN;
@@ -37,9 +37,8 @@ public class MainActivity extends AppCompatActivity {
     TextView emailTvv;
     FirebaseDatabase database;
     DatabaseReference myRef;
-    Customer customer1;
+    Customer currentCustomer;
     public static final String TAG = "VALUE FB";
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,6 +52,7 @@ public class MainActivity extends AppCompatActivity {
         phoneTvv = (TextView)findViewById(R.id.phoneTV);
         addressTvv = (TextView)findViewById(R.id.phoneTV);
         emailTvv = (TextView)findViewById(R.id.emailTV);
+        customerIndex = 0;
 
         customers = new ArrayList<Customer>();
         database = FirebaseDatabase.getInstance();
@@ -69,12 +69,12 @@ public class MainActivity extends AppCompatActivity {
                     Log.d(TAG, "Value is: " + myCustomer.getFirstName());
                     customers.add(myCustomer);
                 }
-                customer1 = customers.get(0);
-                nameTvv.setText(customer1.getFirstName());
-                lastNameTvv.setText(customer1.getLastName());
-                phoneTvv.setText(customer1.getPhone());
-                addressTvv.setText(customer1.getAddress());
-                emailTvv.setText(customer1.getEmail());
+                currentCustomer = customers.get(customerIndex);
+                nameTvv.setText(currentCustomer.getFirstName());
+                lastNameTvv.setText(currentCustomer.getLastName());
+                phoneTvv.setText(currentCustomer.getPhone());
+                addressTvv.setText(currentCustomer.getAddress());
+                emailTvv.setText(currentCustomer.getEmail());
             }
 
             @Override
@@ -94,7 +94,19 @@ public class MainActivity extends AppCompatActivity {
     nextBTNNN.setOnClickListener(new View.OnClickListener() {
         @Override
         public void onClick(View view) {
+            if (customerIndex < customers.size()-1){
+                customerIndex ++;
+                currentCustomer = customers.get(customerIndex);
+                nameTvv.setText(currentCustomer.getFirstName());
+                lastNameTvv.setText(currentCustomer.getLastName());
+                phoneTvv.setText(currentCustomer.getPhone());
+                addressTvv.setText(currentCustomer.getAddress());
+                emailTvv.setText(currentCustomer.getEmail());
 
+            }
+            else  {
+                nextBTNNN.setVisibility(View.INVISIBLE);
+            }
 
         }
     });
@@ -107,6 +119,5 @@ public class MainActivity extends AppCompatActivity {
     });
 
     }
-
 
 }
